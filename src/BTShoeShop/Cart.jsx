@@ -1,29 +1,16 @@
-// rafce
 import React from 'react'
 
 const Cart = ({ carts, handleCartQuantity, handleDeleteCart }) => {
     console.log('carts: ', carts)
-    // const {carts}= props
     return (
-        <div
-            className="modal fade"
-            id="carts"
-            tabIndex={-1}
-            aria-labelledby="exampleModalLabel"
-            aria-hidden="true"
-        >
+        <div className="modal fade" id="carts" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true"  >
             <div className="modal-dialog modal-xl">
                 <div className="modal-content">
                     <div className="modal-header">
                         <h1 className="modal-title fs-5" id="exampleModalLabel">
                             Giỏ hàng
                         </h1>
-                        <button
-                            type="button"
-                            className="btn-close"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                        />
+                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
                     </div>
                     <div className="modal-body">
                         {carts.length ? (
@@ -36,7 +23,6 @@ const Cart = ({ carts, handleCartQuantity, handleDeleteCart }) => {
                                         <th>Price</th>
                                         <th>Quantity</th>
                                         <th>Total</th>
-                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -46,46 +32,26 @@ const Cart = ({ carts, handleCartQuantity, handleDeleteCart }) => {
                                                 <td>{index + 1}</td>
                                                 <td>{cart.name}</td>
                                                 <td>
-                                                    <img
-                                                        style={{
-                                                            width: 80,
-                                                            height: 80,
-                                                        }}
-                                                        className="img-fluid"
-                                                        src={cart.image}
-                                                        alt="..."
-                                                    />
+                                                    <img style={{ width: 80, height: 80, }} className="img-fluid" src={cart.image} alt="..." />
                                                 </td>
                                                 <td>{cart.price}</td>
                                                 <td>
-                                                    <button
-                                                        className="btn btn-outline-success"
-                                                        onClick={() => {
-                                                            handleCartQuantity(cart.id, 1)
-                                                        }}
-                                                    >
+                                                    <button className="btn btn-outline-success"
+                                                        onClick={() => { handleCartQuantity(cart.id, 1) }} >
                                                         +
                                                     </button>
                                                     <span className="mx-3">
                                                         {cart.cartQuantity}
                                                     </span>
-                                                    <button
-                                                        className="btn btn-outline-danger"
-                                                        onClick={() => {
-                                                            handleCartQuantity(cart.id, -1)
-                                                        }}
-                                                    >
+                                                    <button className="btn btn-outline-danger"
+                                                        onClick={() => { handleCartQuantity(cart.id, -1) }} >
                                                         -
                                                     </button>
                                                 </td>
                                                 <td>{cart.cartQuantity * cart.price}</td>
                                                 <td>
-                                                    <button
-                                                        className="btn btn-danger"
-                                                        onClick={() => {
-                                                            handleDeleteCart(cart.id)
-                                                        }}
-                                                    >
+                                                    <button className="btn btn-danger"
+                                                        onClick={() => { handleDeleteCart(cart.id) }} >
                                                         X
                                                     </button>
                                                 </td>
